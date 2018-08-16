@@ -115,6 +115,8 @@ var audio2;
       audio1=blob;
     else
       audio2=blob;
+    PlayAudio(audio1);
+
     var url = (window.URL || window.webkitURL).createObjectURL(blob);
     var link = document.getElementById("save");
     link.href = url;
@@ -124,3 +126,10 @@ var audio2;
   window.Recorder = Recorder;
 
 })(window);
+
+function PlayAudio(blob)
+{
+  var blobURL = window.URL.createObjectURL(blob);
+ var audio0 = new Audio(blobURL);
+ audio0.play();
+}
