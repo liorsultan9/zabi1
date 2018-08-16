@@ -114,8 +114,12 @@ var audio2;
     if(!audio1)
       audio1=blob;
     else
+    {
       audio2=blob;
-    PlayAudio(audio1);
+
+      PlayAudio(audio1);
+      PlayAudio(audio2);
+    }
 
     var url = (window.URL || window.webkitURL).createObjectURL(blob);
     var link = document.getElementById("save");
